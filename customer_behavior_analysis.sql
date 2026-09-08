@@ -1,4 +1,4 @@
--- Which Membership Type (Gold, Silver, Bronze) generates the highest total revenue?
+-- 1 Which Membership Type (Gold, Silver, Bronze) generates the highest total revenue?
 
 SELECT
 	membership_type,
@@ -10,7 +10,7 @@ group by
 order by 
 	total_revenue desc;
 
--- What is the average order value (Total Spend divided by Items Purchased) for each city?
+-- 2 What is the average order value (Total Spend divided by Items Purchased) for each city?
 
 select
 	city,
@@ -20,7 +20,7 @@ from
 group by 
 	city;
 	
--- Are Bronze members significantly more "Unsatisfied" than Gold members? 
+-- 3 Are Bronze members significantly more "Unsatisfied" than Gold members? 
 SELECT
 	MEMBERSHIP_TYPE,
 	COUNT(*) FILTER (
@@ -34,7 +34,7 @@ WHERE
 GROUP BY
 	MEMBERSHIP_TYPE;
  
----- Does offering a discount increase customer satisfaction levels, or does it have no impact?
+----4 Does offering a discount increase customer satisfaction levels, or does it have no impact?
  
 SELECT 
     satisfaction_level,
@@ -49,7 +49,7 @@ GROUP BY
 ORDER BY 
     discount_rate_pct DESC;
 
---Which City has the highest average Satisfaction Level?
+-- 5 Which City has the highest average Satisfaction Level?
 
 SELECT
 	CITY,
@@ -72,7 +72,7 @@ GROUP BY
 ORDER BY
 	AVG_SATISFACTION_SCORE DESC;
  
---Is there a specific Gender preference for certain membership types or cities?
+-- 6 Is there a specific Gender preference for certain membership types or cities?
 
 SELECT 
     city,
@@ -91,7 +91,7 @@ ORDER BY
     city, 
     membership_type;
 
---- Which Age group (e.g., 20-29, 30-39, 40+) spends the most money and buys the most items?
+--- 7 Which Age group (e.g., 20-29, 30-39, 40+) spends the most money and buys the most items?
 
 WITH age_buckets AS (
     SELECT 
